@@ -1,30 +1,35 @@
-% FireFair candidates.bib -- append-only, populated by initial sweep 2026-04-17.
+% FireFair candidates.bib -- append-only, initial deep sweep 2026-04-17 (full re-sweep).
 % Relevance tags: [A-predict] [B-agent-vlm] [C-equity] [baseline] [dataset] [method]
+% Action tags:    CITE-NOW / DISCUSS / POST-SUBMIT / WATCH
+% Lookback: A = 12 months, B = 18 months, C = 36 months.
 
 % ==========================================================================
-% Draft-only entries cited in the FireFair manuscript but not yet in the
-% baseline bibliography. Included verbatim.
+% Draft-promoted entries -- cited in FireFair draft, not in firefair_existing.bib
 % ==========================================================================
 
-@article{dennin2025socially,
+% [C-equity] CITE-NOW (already in draft) -- SVI-quartile motivation for DeltaEO
+@article{dennin2025smokejustice,
   author  = {Dennin, Luke R. and Nock, Destenie and Muller, Nicholas Z. and Akindele, Medinat and Adams, Peter J.},
   title   = {Socially vulnerable communities face disproportionate exposure and susceptibility to {U.S.} wildfire and prescribed burn smoke},
   journal = {Communications Earth \& Environment},
   volume  = {6},
-  number  = {1},
   pages   = {190},
   year    = {2025},
-  doi     = {10.1038/s43247-025-02100-y}
+  doi     = {10.1038/s43247-025-02100-y},
+  note    = {Promoted from draft. Draft cites this as "6(1), 11" -- verify article number.}
 }
 
+% [C-equity] CITE-NOW (already in draft) -- LA Palisades 2025 smoke case study
 @misc{ji2025palisades,
   author       = {Ji, Yi and Devlin, Christopher and Ivey, Cesunica E.},
   title        = {Evaluation of Smoke Exposure Risk from January 2025 {Los Angeles} Wildfires Using Crowdsourced Data},
-  howpublished = {eScholarship, University of California},
   year         = {2025},
-  url          = {https://escholarship.org/uc/item/84w9v3s9}
+  howpublished = {eScholarship, University of California},
+  url          = {https://escholarship.org/uc/item/84w9v3s9},
+  note         = {Promoted from draft. TODO: verify exact author initials and title from Zotero.}
 }
 
+% [C-equity] CITE-NOW (already in draft) -- foundational SVI x wildfire smoke paper
 @article{modaresirad2023social,
   author  = {Modaresi Rad, Arash and Abatzoglou, John T. and Fleishman, Erica and Mockrin, Miranda H. and Radeloff, Volker C. and Pourmohamad, Yavar and Cattau, Megan and Johnson, J. Michael and Higuera, Philip and Nauslar, Nicholas J. and Sadegh, Mojtaba},
   title   = {Social vulnerability of the people exposed to wildfires in {U.S.} {West Coast} states},
@@ -33,246 +38,345 @@
   number  = {38},
   pages   = {eadh4615},
   year    = {2023},
-  doi     = {10.1126/sciadv.adh4615}
+  doi     = {10.1126/sciadv.adh4615},
+  note    = {Promoted from draft.}
 }
 
 % ==========================================================================
-% Line A -- ML wildfire ignition / spread / risk prediction (past 12 months)
+% --- Line A additions (ML wildfire ignition / risk prediction) ---
+% Sweep: 2026-04-17. Lookback: 12 months (since 2025-04-17).
 % ==========================================================================
 
+% [A-predict][dataset] CITE-NOW -- target: Section 3 Data + Section 2 Related Work
+% 37M-row California-specific wildfire dataset (2012-2022).
+% Reviewer will ask "why didn't you train/evaluate on CAWFI?"
 @misc{bhowmik2025cawfi,
-  author = {Bhowmik, Rohan Tan and Jung, Youn Soo and Aguilera, Juan and Prunicki, Mary and Nadeau, Kari},
-  title  = {{CAWFI}: California Wildfire Inventory -- An Extensive Dataset for Predictive Techniques based on Artificial Intelligence},
-  year   = {2025},
-  eprint = {2509.11015},
+  author        = {Bhowmik, Rohan Tan and Jung, Youn Soo and Aguilera, Juan and Prunicki, Mary and Nadeau, Kari},
+  title         = {California Wildfire Inventory ({CAWFI}): An Extensive Dataset for Predictive Techniques based on Artificial Intelligence},
+  year          = {2025},
+  eprint        = {2509.11015},
   archivePrefix = {arXiv},
-  primaryClass  = {cs.LG}
+  primaryClass  = {cs.LG},
+  note          = {Submitted 2025-09-14. CA 2012-2022; paper reports 85.7\% accuracy on >300k-acre fires using a spatio-temporal AI model.}
 }
 
-@article{michail2025firecastnet,
-  author  = {Michail, Dimitrios and Davalas, Charalampos and Panagiotou, Lefki-Ioanna and Prapas, Ioannis and Kondylatos, Spyros and Bountos, Nikolaos-Ioannis and Papoutsis, Ioannis},
+% [A-predict][baseline] CITE-NOW -- target: Section 2 Related Work Line A
+% Peer-reviewed 2026 Nature Sci Reports seasonal-fire SOTA; will look
+% negligent to omit next to digiuseppe2025global.
+@article{michail2026firecastnet,
+  author  = {Michail, Dimitrios and Davalas, Charalampos and Chafis, Konstantinos and Panagiotou, Lefki-Ioanna and Prapas, Ioannis and Kondylatos, Spyros and Bountos, Nikolaos Ioannis and Papoutsis, Ioannis},
   title   = {{FireCastNet}: Earth-as-a-Graph for Seasonal Fire Prediction},
   journal = {Scientific Reports},
-  year    = {2025},
-  note    = {Also available as arXiv:2502.01550},
-  doi     = {10.1038/s41598-025-30645-7}
+  volume  = {16},
+  pages   = {1006},
+  year    = {2026},
+  doi     = {10.1038/s41598-025-30645-7},
+  note    = {Also arXiv:2502.01550 v2 (2025-11-19). 3D conv + GraphCast-style GNN on SeasFire; lead times up to 6 months.}
 }
 
-@misc{lahrichi2025wsts,
-  author = {Lahrichi, Saad and Sherman, Jesse and Bradbury, Kyle and Malof, Jordan},
-  title  = {Improved Wildfire Spread Prediction with Time-Series Data and the {WSTS+} Benchmark},
-  year   = {2025},
-  eprint = {2502.12003},
+% [A-predict][baseline] CITE-NOW -- target: Section 2 Related Work Line A
+% Vision-Transformer subseasonal-to-seasonal wildfire forecast; same lab as FireCastNet.
+@misc{prapas2025televit,
+  author        = {Prapas, Ioannis and Papadopoulos, Nikolaos and Bountos, Nikolaos-Ioannis and Michail, Dimitrios and Camps-Valls, Gustau and Papoutsis, Ioannis},
+  title         = {{TeleViT1.0}: Teleconnection-aware Vision Transformers for Subseasonal to Seasonal Wildfire Pattern Forecasts},
+  year          = {2025},
+  eprint        = {2512.00089},
   archivePrefix = {arXiv},
   primaryClass  = {cs.CV},
-  note   = {% TODO: verify full author list}
+  note          = {Submitted 2025-11-26. ViT with multi-scale local/global + ocean-climate teleconnection indices.}
 }
 
-@misc{anastasiou2025wildfire,
-  author = {Anastasiou, Nikolaos and Kondylatos, Spyros and Papoutsis, Ioannis},
-  title  = {Wildfire Spread Forecasting with Deep Learning},
-  year   = {2025},
-  eprint = {2505.17556},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CV}
-}
-
+% [A-predict][method] DISCUSS -- uncertainty-quantification framing
+% Reviewer may ask why FireFair reports point predictions without epistemic/aleatoric bounds.
 @misc{kondylatos2025uncertainty,
-  author = {Kondylatos, Spyros and Camps-Valls, Gustau and Papoutsis, Ioannis},
-  title  = {Uncertainty-Aware Deep Learning for Wildfire Danger Forecasting},
-  year   = {2025},
-  eprint = {2509.25017},
+  author        = {Kondylatos, Spyros and Camps-Valls, Gustau and Papoutsis, Ioannis},
+  title         = {Uncertainty-Aware Deep Learning for Wildfire Danger Forecasting},
+  year          = {2025},
+  eprint        = {2509.25017},
   archivePrefix = {arXiv},
-  primaryClass  = {cs.LG}
+  primaryClass  = {cs.LG},
+  note          = {Submitted 2025-09-29. +2.3\% F1, -2.1\% ECE vs. deterministic baseline on wildfire danger.}
 }
 
-@misc{chen2025realtime,
-  author = {Chen, Qijun and Li, Shaofan},
-  title  = {A Real-time Multimodal Transformer Neural Network-powered Wildfire Forecasting System},
-  year   = {2025},
-  eprint = {2503.05971},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.LG}
+% [A-predict] DISCUSS -- task-framing contrast: damage != ignition
+% California + interpretable ML + CAL FIRE data overlaps our pitch. Must distinguish ignition (ours) from post-event damage (theirs).
+@article{jia2025damagedrivers,
+  author  = {Jia, Yiming and Opabola, Eyitayo A.},
+  title   = {Interpretable machine learning insights into wildfire damage drivers in {California}, {USA}},
+  journal = {International Journal of Disaster Risk Reduction},
+  volume  = {126},
+  pages   = {105610},
+  year    = {2025},
+  doi     = {10.1016/j.ijdrr.2025.105610},
+  note    = {DNN + transfer learning + SHAP; evaluated on Jan 2025 Southern CA wildfires.}
 }
 
-@article{zhou2025comparative,
-  author  = {Zhou, Aoli and Cheng, Sibo and others},
+% [A-predict] POST-SUBMIT -- Mediterranean burned-area prediction, ViT vs CNN
+@misc{anastasiou2025spread,
+  author        = {Anastasiou, Nikolaos and Kondylatos, Spyros and Papoutsis, Ioannis},
+  title         = {Wildfire Spread Forecasting with Deep Learning},
+  year          = {2025},
+  eprint        = {2505.17556},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {Submitted 2025-05-23. Mediterranean 2006-2022; best model uses -4 to +5 day window around ignition.}
+}
+
+% [A-predict] POST-SUBMIT -- survey, generative AI for fire spread (2D/3D)
+@misc{xu2025generative,
+  author        = {Xu, Haowen and Zlatanova, Sisi and Liang, Ruiyu and Canbulat, Ismet},
+  title         = {Generative {AI} as a Pillar for Predicting 2{D} and 3{D} Wildfire Spread: Beyond Physics-Based Models and Traditional Deep Learning},
+  year          = {2025},
+  eprint        = {2506.02485},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  note          = {v2 2025-08-04. GANs/VAEs/Transformers/diffusion for fire spread.}
+}
+
+% [A-predict] POST-SUBMIT -- burned-area mapping from bi-temporal imagery
+@misc{seydi2025alphaearth,
+  author        = {Seydi, Seyd Teymoor},
+  title         = {Deep Learning-Based Burned Area Mapping Using Bi-Temporal {Siamese} Networks and {AlphaEarth} Foundation Datasets},
+  year          = {2025},
+  eprint        = {2509.07852},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {Submitted 2025-09-09. US-trained, tested on 17 European regions. 95\% accuracy, IoU 0.60.}
+}
+
+% [A-predict] POST-SUBMIT -- CA spread CNN vs Transformer (Cheng group)
+@article{zhou2025spread,
+  author  = {Zhou, Yihang and Kong, Ruige and Xu, Zhengsen and Xu, Linlin and Cheng, Sibo},
   title   = {Comparative and Interpretative Analysis of {CNN} and Transformer Models in Predicting Wildfire Spread Using Remote Sensing Data},
   journal = {Journal of Geophysical Research: Machine Learning and Computation},
   year    = {2025},
   doi     = {10.1029/2024JH000409},
-  note    = {% TODO: verify full author list and volume/issue}
+  note    = {Also arXiv:2503.14150 (2025-03-18). ~decade of California remote-sensing data; Swin-UNet and UNet win on attention + skip connections.}
 }
 
-@misc{erzibengoa2025iberfire,
-  author = {Erzibengoa, Julen and G{\'o}mez-Omella, Meritxell and Goienetxea, Izaro},
-  title  = {{IberFire}: A Detailed Creation of a Spatio-Temporal Dataset for Wildfire Risk Assessment in {Spain}},
-  year   = {2025},
-  eprint = {2505.00837},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.LG}
+% [A-predict] POST-SUBMIT -- ConvLSTM with firebreaks, three CA case studies
+@article{zheng2025firebreaks,
+  author  = {Zheng, Jiahe and Xu, Zhengsen and Arcucci, Rossella and Harrison, Sandy P. and Xu, Lincoln Linlin and Cheng, Sibo},
+  title   = {Predicting spatio-temporal wildfire propagation with dynamic firebreaks},
+  journal = {EGUsphere preprint},
+  year    = {2025},
+  doi     = {10.5194/egusphere-2025-4007},
+  note    = {Submitted 2025-08-16. First DL model integrating human-intervention firebreak strategies; three CA case studies.}
 }
 
-@misc{markov2025firescope,
-  author = {Markov, Mario and Ailuro, Stefan Maria and Van Gool, Luc and Schindler, Konrad and Paudel, Danda Pani},
-  title  = {{FireScope}: Wildfire Risk Prediction with a Chain-of-Thought Oracle},
-  year   = {2025},
-  eprint = {2511.17171},
+% [A-predict][dataset][baseline] POST-SUBMIT -- foundation-model benchmark incl. fire
+@misc{zhao2025exebench,
+  author        = {Zhao, Shan and Xiong, Zhitong and Zhao, Jie and Zhu, Xiao Xiang},
+  title         = {{ExEBench}: Benchmarking Foundation Models on Extreme Earth Events},
+  year          = {2025},
+  eprint        = {2505.08529},
   archivePrefix = {arXiv},
   primaryClass  = {cs.CV},
-  note   = {% TODO: verify full author list -- paper lists 5 primary + additional authors}
+  note          = {Submitted 2025-05-13. Seven extreme-event categories including wildfire.}
 }
 
-@misc{adversarial2024wildfire,
-  author = {Anonymous},
-  title  = {Adversarial Robustness for Deep Learning-based Wildfire Prediction Models},
-  year   = {2024},
-  eprint = {2412.20006},
+% [A-predict][dataset] POST-SUBMIT -- global 59-variable fire datacube
+@article{karasante2025seasfire,
+  author  = {Karasante, Ilektra and Alonso, Lazaro and Prapas, Ioannis and Ahuja, Akanksha and Carvalhais, Nuno and Papoutsis, Ioannis},
+  title   = {{SeasFire} cube -- a multivariate dataset for global wildfire modeling},
+  journal = {Scientific Data},
+  volume  = {12},
+  pages   = {368},
+  year    = {2025},
+  doi     = {10.1038/s41597-025-04546-3},
+  note    = {59 variables, 8-day temporal, 0.25 deg, 2001-2021. Companion to FireCastNet / TeleViT.}
+}
+
+% [A-predict] WATCH -- CA containment-time regression (downstream of ignition)
+@misc{bhardwaj2025containment,
+  author        = {Bhardwaj, Shashank},
+  title         = {Predicting the Containment Time of {California} Wildfires Using Machine Learning},
+  year          = {2025},
+  eprint        = {2512.09835},
   archivePrefix = {arXiv},
   primaryClass  = {cs.LG},
-  note   = {% TODO: verify authors}
+  note          = {Submitted 2025-12-10. XGBoost / RF / LSTM comparison on CA fire management data.}
 }
 
 % ==========================================================================
-% Line B -- LLM agents + VLM for remote sensing / hazard (past 18 months)
+% --- Line B additions (LLM agents + VLM for remote sensing / hazard) ---
+% Sweep: 2026-04-17. Lookback: 18 months (since 2024-10-17).
 % ==========================================================================
 
+% [B-agent-vlm][baseline] CITE-NOW -- target: Section 2 Related Work Line B + Section 4
+% Peer-reviewed 2025 multi-agent RAG LLM for hazard; same lineage / lead author
+% as firefair_existing.bib's `xie2025wildfiregpt` (original 2024 arXiv). This is
+% the published 2025 evolution and should REPLACE or augment the existing cite.
 @article{xie2025marsha,
   author  = {Xie, Yangxinyu and Jiang, Bowen and Mallick, Tanwi and Bergerson, Joshua David and Hutchison, John K. and Verner, Duane R. and Branham, Jordan and Alexander, M. Ross and Ross, Robert B. and Feng, Yan and Levy, Leslie-Anne and Su, Weijie J. and Taylor, Camillo J.},
-  title   = {{MARSHA}: Multi-Agent {RAG} System for Hazard Adaptation},
+  title   = {{MARSHA}: A {RAG}-Based Multi-Agent {LLM} System for Natural Hazard Resilience and Adaptation},
   journal = {npj Climate Action},
   volume  = {4},
   pages   = {70},
   year    = {2025},
   doi     = {10.1038/s44168-025-00254-1},
-  note    = {Companion arXiv preprint: arXiv:2504.17200}
+  note    = {Companion arXiv:2504.17200 (2025-04-24). 10 expert case studies; outperforms existing LLM decision-support baselines.}
 }
 
-@misc{chen2025geospatial,
-  author = {Chen, Yiheng and Li, Lingyao and Ma, Zihui and Hu, Qikai and Zhu, Yilun and Deng, Min and Yu, Runlong},
-  title  = {Empowering {LLM} Agents with Geospatial Awareness: Toward Grounded Reasoning for Wildfire Response},
-  year   = {2025},
-  eprint = {2510.12061},
+% [B-agent-vlm][baseline] CITE-NOW -- target: Section 2 Line B + Section 4 (Sentinel-2 VLA + Equity Agent)
+% The closest 2025 analogue to FireFair's Sentinel-2 Vision-Language Agent:
+% couples Sentinel-2 imagery with climate data and expert risk rasters, uses
+% language-model reasoning to generate wildfire risk maps, tests cross-continental
+% transfer (US->EU). Reviewer will treat omission as a major miss.
+@misc{markov2025firescope,
+  author        = {Markov, Mario and Ailuro, Stefan Maria and Van Gool, Luc and Schindler, Konrad and Paudel, Danda Pani},
+  title         = {{FireScope}: Wildfire Risk Prediction with a Chain-of-Thought Oracle},
+  year          = {2025},
+  eprint        = {2511.17171},
   archivePrefix = {arXiv},
-  primaryClass  = {cs.AI}
+  primaryClass  = {cs.CV},
+  note          = {Submitted 2025-11-21. Sentinel-2 + climate data + expert risk rasters; RL + visual supervision; US->EU cross-continental generalization.}
 }
 
+% [B-agent-vlm][baseline] CITE-NOW -- target: Section 2 Line B + Section 4 (Equity Agent)
+% Direct conceptual competitor to our Equity Agent's geospatial grounding.
+% Distinguishes FireFair by computing explicit DeltaEO / rho vs. their descriptive
+% grounding on infrastructure / demographics.
+@misc{chen2025gal,
+  author        = {Chen, Yiheng and Li, Lingyao and Ma, Zihui and Hu, Qikai and Zhu, Yilun and Deng, Min and Yu, Runlong},
+  title         = {Empowering {LLM} Agents with Geospatial Awareness: Toward Grounded Reasoning for Wildfire Response},
+  year          = {2025},
+  eprint        = {2510.12061},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  note          = {Submitted 2025-10-14. Geospatial Awareness Layer (GAL): infra, demographics, terrain, weather grounding for LLM wildfire response.}
+}
+
+% [B-agent-vlm][baseline] CITE-NOW -- target: Section 2 Line B
+% VLM pipeline on the SAME Jan 2025 Eaton + Palisades fires we feature in intro.
+% Different modality (ground-level vs. our Sentinel-2) but same paradigm.
+@misc{esparza2025damagevlm,
+  author        = {Esparza, Miguel and Gupta, Archit and Yin, Kai and Xiao, Yiming and Mostafavi, Ali},
+  title         = {Automated Wildfire Damage Assessment from Multi-view Ground-level Imagery Via Vision Language Models},
+  year          = {2025},
+  eprint        = {2509.01895},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {v1 2025-09-02; v2 2026-04-04. Zero-shot MLLM on 2025 Eaton/Palisades CA fires.}
+}
+
+% [B-agent-vlm][baseline] DISCUSS -- temporal-EO VLM baseline (ICLR 2025)
+@inproceedings{irvin2025teochat,
+  author    = {Irvin, Jeremy Andrew and Liu, Emily Ruoyu and Chen, Joyce Chuyi and Dormoy, Ines and Kim, Jinyoung and Khanna, Samar and Zheng, Zhuo and Ermon, Stefano},
+  title     = {{TEOChat}: A Large Vision-Language Assistant for Temporal {Earth} Observation Data},
+  booktitle = {International Conference on Learning Representations ({ICLR})},
+  year      = {2025},
+  note      = {Companion arXiv:2410.06234 v2 2025-01-27. 554k examples across 44 temporal EO tasks.}
+}
+
+% [B-agent-vlm][benchmark] DISCUSS -- geospatial VLM benchmark (ICCV 2025)
+% Strongest evidence that geospatial VLMs are brittle (best model ~42% MCQ);
+% motivates our multi-agent approach beyond raw VLM call.
+@inproceedings{danish2025geobench,
+  author    = {Danish, Muhammad Sohail and Munir, Muhammad Akhtar and Shah, Syed Roshaan Ali and Kuckreja, Kartik and Khan, Fahad Shahbaz and Fraccaro, Paolo and Lacoste, Alexandre and Khan, Salman},
+  title     = {{GEOBench-VLM}: Benchmarking Vision-Language Models for Geospatial Tasks},
+  booktitle = {IEEE/CVF International Conference on Computer Vision ({ICCV})},
+  year      = {2025},
+  note      = {Companion arXiv:2411.19325. 31 tasks; LLaVa-OneVision 41.7\%, GPT-4o ~42\%.}
+}
+
+% [B-agent-vlm][benchmark] DISCUSS -- VLM smoke-detection failure modes (WACV 2026)
+@inproceedings{qi2026smokebench,
+  author    = {Qi, Tianye and Li, Weihao and Barnes, Nick},
+  title     = {{SmokeBench}: Evaluating Multimodal Large Language Models for Wildfire Smoke Detection},
+  booktitle = {IEEE/CVF Winter Conference on Applications of Computer Vision ({WACV})},
+  year      = {2026},
+  note      = {Companion arXiv:2512.11215 (2025-12-12). GPT-4o, Gemini-2.5-Pro, Qwen2.5-VL all fail at early-stage smoke localization.}
+}
+
+% [B-agent-vlm][baseline] DISCUSS -- Sentinel-2 foundation-model option
+% If FireFair's VLA is fine-tuned from a generic VLM rather than a specialized
+% RS foundation model, Prithvi-EO-2.0 is the obvious alternative a reviewer
+% will ask about.
+@misc{szwarcman2024prithvi,
+  author        = {Szwarcman, Daniela and Roy, Sujit and Fraccaro, Paolo and {G{\'\i}slason}, {\TH}orsteinn El{\'\i} and Blumenstiel, Benedikt and Ghosal, Rinki and de Oliveira, Pedro Henrique and de Sousa Almeida, Joao Lucas and Sedona, Rocco and Kang, Yanghui and Chakraborty, Srija and Wang, Sizhe and Gomes, Carlos and Kumar, Ankur and Truong, Myscon and Godwin, Denys and Lee, Hyunho and Hsu, Chia-Yu and Lal, Rohit and Asanjan, Ata Akbari and Mujeci, Besart and Shidham, Disha and Keenan, Trevor and Arevalo, Paulo and Li, Wenwen and Alemohammad, Hamed and Olofsson, Pontus and Hain, Christopher and Kennedy, Robert and Zadrozny, Bianca and Bell, David and Cavallaro, Gabriele and Watson, Campbell and Maskey, Manil and Ramachandran, Rahul and {Bernabe Moreno}, Juan},
+  title         = {{Prithvi-EO-2.0}: A Versatile Multi-Temporal Foundation Model for {Earth} Observation Applications},
+  year          = {2024},
+  eprint        = {2412.02732},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {HLS (Landsat + Sentinel-2) 4.2M time series; +8\% over Prithvi-EO v1; open weights on HuggingFace + IBM TerraTorch.}
+}
+
+% [B-agent-vlm][baseline] POST-SUBMIT -- EarthDial multi-sensor EO dialogue (CVPR 2025)
+@inproceedings{soni2025earthdial,
+  author    = {Soni, Sagar and Dudhane, Akshay and Debary, Hiyam and Fiaz, Mustansar and Munir, Muhammad Akhtar and Danish, Muhammad Sohail and Fraccaro, Paolo and Watson, Campbell D. and Klein, Levente J. and Khan, Fahad Shahbaz and Khan, Salman},
+  title     = {{EarthDial}: Turning Multi-sensory {Earth} Observations to Interactive Dialogues},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition ({CVPR})},
+  year      = {2025},
+  note      = {Companion arXiv:2412.15190 v2 2025-04-07. 11M QA pairs; RGB + SAR + multispectral; 44 downstream datasets.}
+}
+
+% [B-agent-vlm][baseline] POST-SUBMIT -- same LA 2025 fires, air-quality policy agent
 @article{gao2025instructor,
   author  = {Gao, Hsin-Chieh and others},
   title   = {Instructor-Worker Large Language Model System for Policy Recommendation: A Case Study on Air Quality Analysis of the January 2025 {Los Angeles} Wildfires},
   journal = {International Journal of Applied Earth Observation and Geoinformation},
   year    = {2025},
-  note    = {Available as arXiv:2503.00566 -- % TODO: verify full author list and journal metadata}
+  note    = {Companion arXiv:2503.00566. TODO: verify full author list and journal metadata (volume/pages).}
 }
 
-@misc{esparza2025automated,
-  author = {Esparza, Miguel and Gupta, Archit and Mostafavi, Ali and Yin, Kai and Xiao, Yiming},
-  title  = {Automated Wildfire Damage Assessment from Multi-view Ground-level Imagery Via Vision Language Models},
-  year   = {2025},
-  eprint = {2509.01895},
+% [B-agent-vlm][benchmark] POST-SUBMIT -- agentic multi-agent wildfire benchmark
+@misc{hyun2025crewwildfire,
+  author        = {Hyun, Jonathan and Waytowich, Nicholas R. and Chen, Boyuan},
+  title         = {{CREW-WILDFIRE}: Benchmarking Agentic Multi-Agent Collaborations at Scale},
+  year          = {2025},
+  eprint        = {2507.05178},
   archivePrefix = {arXiv},
-  primaryClass  = {cs.CV}
+  primaryClass  = {cs.MA},
+  note          = {v1 2025-07-07, v2 2025-12-12. Procedurally generated wildfire response scenarios; exposes coordination / spatial-reasoning gaps in SOTA agentic frameworks.}
 }
 
-@article{contextaware2026mas,
+% [B-agent-vlm][dataset] POST-SUBMIT -- multi-modal fire dataset (NeurIPS 2025)
+@inproceedings{liu2025detectiumfire,
+  author    = {Liu, Zixuan and Khajavi, Siavash H. and Jiang, Guangkai},
+  title     = {{DetectiumFire}: A Comprehensive Multi-modal Dataset Bridging Vision and Language for Fire Understanding},
+  booktitle = {Advances in Neural Information Processing Systems ({NeurIPS}), Datasets \& Benchmarks Track},
+  year      = {2025},
+  note      = {Companion arXiv:2511.02495. 22.5k images + 2.5k videos with fire annotations + descriptive text.}
+}
+
+% [B-agent-vlm][baseline] POST-SUBMIT -- UAV + VLM for early fire detection (Drones 2025)
+@article{forestfirevlm2025,
   author  = {Anonymous},
-  title   = {Context-Aware Multi-Agent Architecture for Wildfire Insights},
-  journal = {Sensors},
-  volume  = {26},
-  number  = {3},
-  pages   = {1070},
-  year    = {2026},
-  doi     = {10.3390/s26031070},
-  note    = {% TODO: verify authors}
+  title   = {Advancing Early Wildfire Detection: Integration of Vision Language Models with Unmanned Aerial Vehicle Remote Sensing for Enhanced Situational Awareness},
+  journal = {Drones (MDPI)},
+  volume  = {9},
+  number  = {5},
+  pages   = {347},
+  year    = {2025},
+  doi     = {10.3390/drones9050347},
+  note    = {ForestFireVLM-7B fine-tuned outperforms GPT-4o / Gemini on UAV fire imagery. TODO: verify author list.}
 }
 
-@misc{qi2026smokebench,
-  author = {Qi, Tianye and Li, Weihao and Barnes, Nick},
-  title  = {{SmokeBench}: Evaluating Multimodal Large Language Models for Wildfire Smoke Detection},
-  year   = {2025},
-  eprint = {2512.11215},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CV},
-  note   = {To appear: WACV 2026}
-}
-
-@inproceedings{irvin2025teochat,
-  author    = {Irvin, Jeremy Andrew and Liu, Emily Ruoyu and Chen, Joyce Chuyi and Dormoy, Ines and Kim, Jinyoung and Khanna, Samar and Zheng, Zhuo and Ermon, Stefano},
-  title     = {{TEOChat}: A Large Vision-Language Assistant for Temporal Earth Observation Data},
-  booktitle = {International Conference on Learning Representations (ICLR)},
-  year      = {2025},
-  note      = {arXiv:2410.06234}
-}
-
-@inproceedings{danish2025geobench,
-  author    = {Danish, Muhammad Sohail and Munir, Muhammad Akhtar and Shah, Syed Roshaan Ali and Kuckreja, Kartik and Khan, Fahad Shahbaz and Fraccaro, Paolo and Lacoste, Alexandre and Khan, Salman},
-  title     = {{GEOBench-VLM}: Benchmarking Vision-Language Models for Geospatial Tasks},
-  booktitle = {IEEE/CVF International Conference on Computer Vision (ICCV)},
-  year      = {2025},
-  note      = {arXiv:2411.19325}
-}
-
-@inproceedings{kuckreja2024geochat,
-  author    = {Kuckreja, Kartik and Danish, Muhammad Sohail and Naseer, Muzammal and Das, Abhijit and Khan, Salman and Khan, Fahad Shahbaz},
-  title     = {{GeoChat}: Grounded Large Vision-Language Model for Remote Sensing},
-  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year      = {2024},
-  note      = {arXiv:2311.15826 -- % TODO: verify full author list}
-}
-
-@misc{falcon2025vlm,
-  author = {Yao, Kelu and others},
-  title  = {{Falcon}: A Remote Sensing Vision-Language Foundation Model},
-  year   = {2025},
-  eprint = {2503.11070},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CV},
-  note   = {% TODO: verify full author list}
-}
-
-@misc{li2025vlmrs_survey,
-  author = {Anonymous},
-  title  = {Vision-Language Modeling Meets Remote Sensing: Models, Datasets and Perspectives},
-  year   = {2025},
-  eprint = {2505.14361},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CV},
-  note   = {Survey; % TODO: verify authors}
-}
-
-@misc{ayanzadeh2026wildfirevlm,
-  author = {Ayanzadeh, Aydin and Dixit, Prakhar and Kamal, Sadia and Halem, Milton},
-  title  = {{WildfireVLM}: AI-powered Analysis for Early Wildfire Detection and Risk Assessment Using Satellite Imagery},
-  year   = {2026},
-  eprint = {2602.13305},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CV}
-}
-
-@misc{climateagent2025,
-  author = {Anonymous},
-  title  = {{ClimateAgent}: Multi-Agent Orchestration for Complex Climate Data Science Workflows},
-  year   = {2025},
-  eprint = {2511.20109},
+% [B-agent-vlm][method] WATCH -- agentic-AI hazard paradigm (non-wildfire)
+% Useful only if Line B framing needs a non-wildfire agentic-AI hazard reference.
+@misc{syed2025cloudburst,
+  author        = {Syed, Toqeer Ali and Khan, Sohail and Jan, Salman and Ali, Gohar and Nauman, Muhammad and Akarma, Ali and Ali, Ahmad},
+  title         = {Agentic {AI} Framework for Cloudburst Prediction and Coordinated Response},
+  year          = {2025},
+  eprint        = {2511.22767},
   archivePrefix = {arXiv},
   primaryClass  = {cs.AI},
-  note   = {% TODO: verify authors}
-}
-
-@misc{multitarget2026wildfire,
-  author = {Anonymous},
-  title  = {Proof of Concept: Multi-Target Wildfire Risk Prediction and Large Language Model Synthesis},
-  year   = {2026},
-  eprint = {2601.11686},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.LG},
-  note   = {% TODO: verify authors}
+  note          = {Submitted 2025-11-27. Multi-agent AI for extreme rainfall; tested on Pakistan scenarios.}
 }
 
 % ==========================================================================
-% Line C -- Environmental justice / spatial fairness (past 36 months)
+% --- Line C additions (Environmental justice / spatial fairness) ---
+% Sweep: 2026-04-17. Lookback: 36 months (since 2023-04-17).
+% This is FireFair's weakest-covered and highest-reviewer-pushback line;
+% we biased sweep effort here accordingly.
 % ==========================================================================
 
+% [C-equity][method] CITE-NOW -- target: Section 2 Line C + Section 5 (Equity metrics)
+% Nearest peer-reviewed methodological analog to FireFair's DeltaEO / rho.
+% Shows that a policy-EJ algorithm's parameter sensitivity has $2.08B
+% allocative consequences; directly motivates auditing hazard-prediction ML.
 @article{huynh2024mitigating,
   author  = {Huynh, Benjamin Q. and Chin, Elizabeth T. and Koenecke, Allison and Ouyang, Derek and Ho, Daniel E. and Kiang, Mathew V. and Rehkopf, David H.},
   title   = {Mitigating allocative tradeoffs and harms in an environmental justice data tool},
@@ -280,18 +384,27 @@
   volume  = {6},
   pages   = {187--194},
   year    = {2024},
-  doi     = {10.1038/s42256-024-00793-y}
+  doi     = {10.1038/s42256-024-00793-y},
+  note    = {Full audit of CalEnviroScreen under EJ lens; \$2.08B funding consequence of parameter-sensitivity.}
 }
 
+% [C-equity][method] CITE-NOW -- target: Section 5 (Equity Agent / metric definition) + Limitations
+% Position paper that catalogues spatial-fairness failure modes; preemptive
+% defense against the strongest reviewer critique ("DeltaEO does not
+% demonstrably reduce discrimination on protected attributes").
 @misc{saxena2024spatial,
-  author = {Saxena, Nripsuta Ani and Horn, Abigail L. and Zhang, Wenbin and Shahabi, Cyrus},
-  title  = {Spatial Fairness: The Case for its Importance, Limitations of Existing Work, and Guidelines for Future Research},
-  year   = {2024},
-  eprint = {2403.14040},
+  author        = {Saxena, Nripsuta Ani and Horn, Abigail L. and Zhang, Wenbin and Shahabi, Cyrus},
+  title         = {Spatial Fairness: The Case for its Importance, Limitations of Existing Work, and Guidelines for Future Research},
+  year          = {2024},
+  eprint        = {2403.14040},
   archivePrefix = {arXiv},
-  primaryClass  = {cs.LG}
+  primaryClass  = {cs.LG},
+  note          = {v1 2024-03-20 (updated 2026-02-26). Argues spatial fairness is under-defined; closest conceptual predecessor to DeltaEO / rho.}
 }
 
+% [C-equity] CITE-NOW -- target: Section 2 Line C (equity motivation paragraph)
+% Canonical AJPH paper on SVI + wildfire smoke; expected cite in every
+% EJ-wildfire Related Work; omitting it signals unfamiliarity with the literature.
 @article{vargo2023social,
   author  = {Vargo, Jason and Lappe, Brooke and Mirabelli, Maria C. and Conlon, Kathryn C.},
   title   = {Social Vulnerability in {US} Communities Affected by Wildfire Smoke, 2011 to 2021},
@@ -300,105 +413,189 @@
   number  = {7},
   pages   = {759--767},
   year    = {2023},
-  doi     = {10.2105/AJPH.2023.307286}
+  doi     = {10.2105/AJPH.2023.307286},
+  note    = {Largest increases in heavy-smoke person-days were in minority / limited-English / low-education communities.}
 }
 
-@article{jonesngo2025compound,
-  author  = {Jones-Ngo, Chelsea and others},
-  title   = {Increasing Exposures to Compound Wildfire Smoke and Extreme Heat Hazards in {California}, 2011--2020},
-  journal = {Earth's Future},
-  year    = {2025},
-  doi     = {10.1029/2024EF005189},
-  note    = {% TODO: verify full author list and volume/issue}
-}
-
-@article{jung2024advancing,
-  author  = {Jung, Jihoon and Wilkins, Joseph L. and Schollaert, Claire L. and Masuda, Yuta J. and Flunker, John C. and Connolly, Rachel E. and D'Evelyn, Savannah M. and Bonillia, Eimy and Rappold, Ana G. and Haugo, Ryan D. and Marlier, Miriam E. and Spector, June T.},
-  title   = {Advancing the community health vulnerability index for wildland fire smoke exposure},
-  journal = {Science of the Total Environment},
-  volume  = {906},
-  pages   = {167834},
+% [C-equity][method] CITE-NOW -- target: Section 5 (rho / DeltaEO framing) + Section 2 Line C
+% Nature Sustainability methodological analog for equity measurement in
+% flood-risk management. Use to defend DeltaEO / rho as part of a recognized
+% cross-hazard tradition, not a wildfire-specific ad hoc invention.
+@article{pollack2024flood,
+  author  = {Pollack, Adam B. and Helgeson, Casey and Kousky, Carolyn and Keller, Klaus},
+  title   = {Developing more useful equity measurements for flood-risk management},
+  journal = {Nature Sustainability},
+  volume  = {7},
+  pages   = {823--832},
   year    = {2024},
-  doi     = {10.1016/j.scitotenv.2023.167834}
+  doi     = {10.1038/s41893-024-01345-3},
+  note    = {Surveys how "equity" is operationalized in flood-risk peer-reviewed work; flags that most studies fail to defend the value judgements their findings depend on.}
 }
 
-@inproceedings{franchi2023algorithms,
-  author    = {Franchi, Matt and Zamfirescu-Pereira, J.D. and Ju, Wendy and Pierson, Emma},
-  title     = {Algorithms as Social-Ecological-Technological Systems: An Environmental Justice Lens on Algorithmic Audits},
-  booktitle = {Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency (FAccT)},
-  pages     = {805--819},
-  year      = {2023},
-  doi       = {10.1145/3593013.3594014}
-}
-
-@misc{cai2025nolocation,
-  author = {Cai, Daniel and Balestriero, Randall},
-  title  = {No Location Left Behind: Measuring and Improving the Fairness of Implicit Representations for Earth Data},
-  year   = {2025},
-  eprint = {2502.06831},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.LG}
-}
-
-@misc{ghamisi2024responsibleai,
-  author = {Ghamisi, Pedram and Yu, Weikang and Marinoni, Andrea and Gevaert, Caroline M. and Persello, Claudio and Selvakumaran, Sivasakthy and Girotto, Manuela and Horton, Benjamin P. and Rufin, Philippe and Hostert, Patrick and Pacifici, Fabio and Atkinson, Peter M.},
-  title  = {Responsible {AI} for Earth Observation},
-  year   = {2024},
-  eprint = {2405.20868},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CY}
-}
-
-@article{salazarmiranda2024redlining,
-  author  = {Salazar-Miranda, Arianna and others},
-  title   = {Long-term effects of redlining on climate risk exposure},
-  journal = {Nature Cities},
-  year    = {2024},
-  doi     = {10.1038/s44284-024-00076-y},
-  note    = {% TODO: verify full author list}
-}
-
-@article{wildlandpm2025disproportionate,
-  author  = {Anonymous},
-  title   = {Wildland Fire Smoke Adds to Disproportionate {PM2.5} Exposure in the {United States}},
-  journal = {ACS ES\&T Air},
-  year    = {2025},
-  doi     = {10.1021/acsestair.4c00173},
-  note    = {% TODO: verify authors}
-}
-
+% [C-equity][method] CITE-NOW -- target: Section 5 (DeltaEO definition footnote)
+% Foundational FairML textbook; our DeltaEO derives from Hardt/Price/Srebro 2016
+% equal-opportunity notion (Chapter 3). Citing the book signals EJ-aware framing
+% for AIES / FAccT-style reviewers.
 @book{barocas2023fairml,
   author    = {Barocas, Solon and Hardt, Moritz and Narayanan, Arvind},
   title     = {Fairness and Machine Learning: Limitations and Opportunities},
   publisher = {MIT Press},
   year      = {2023},
-  url       = {https://fairmlbook.org/}
+  url       = {https://fairmlbook.org/},
+  note      = {Chapter 3 covers equal-opportunity / equalized-odds; direct basis for DeltaEO.}
 }
 
-@misc{shahabi2023fairspatial,
-  author = {Shaham, Sina and Ghinita, Gabriel and Shahabi, Cyrus},
-  title  = {Fair Spatial Indexing: A Paradigm for Group Spatial Fairness},
-  year   = {2023},
-  eprint = {2302.02306},
+% [C-equity][method] DISCUSS -- target: Section 2 Line C (redlining framing)
+% Nature Cities 2024 paper quantifying long-term redlining-climate risk link
+% (flood + extreme heat). Strong anchor if we frame FireFair's EJ audit as
+% connecting modern ML to historical structural-racism patterns.
+@article{salazarmiranda2024redlining,
+  author  = {Salazar-Miranda, Arianna and Conzelmann, Claire and Phan, Toan and Hoffman, Jeremy S.},
+  title   = {Long-term effects of redlining on climate risk exposure},
+  journal = {Nature Cities},
+  volume  = {1},
+  pages   = {436--444},
+  year    = {2024},
+  doi     = {10.1038/s44284-024-00076-y},
+  note    = {Boundary design on 202 US cities: HOLC-D areas face disproportionate flood + extreme-heat risk, mediated by reduced tree canopy and lower construction foundation height.}
+}
+
+% [C-equity] DISCUSS -- target: Section 2 Line C (CA-specific subgroup vulnerability)
+% ML-based characterization of CA subpopulations disproportionately affected by
+% wildfire smoke exposure. Closest 2025 CA+ML+health-vulnerability paper;
+% useful cross-cite if FireFair wants to emphasize the downstream health
+% implications of ignition-risk disparities.
+@article{letellier2025grf,
+  author  = {Letellier, No{\'e}mie and Jones-Ngo, Caitlin G. and Cheung, Michael W. and Aguilera, Rosana and Casey, Joan A. and Zakaras, Jennifer Monroe and Sugrue, Rebecca and Teherani, Arianne and Thakur, Neeta and Collard, Harold and Weiser, Sheri D. and Benmarhnia, Tarik},
+  title   = {Using generalized random forests to characterize vulnerability to adverse health outcomes following wildfire smoke exposure in {California}},
+  journal = {Environment International},
+  year    = {2025},
+  doi     = {10.1016/j.envint.2025.109955},
+  note    = {GRF on CA 2006-2019 hospital admissions; subgroup vulnerability profiles. Under-75 and Black/Other race+ethnicity are most at risk.}
+}
+
+% [C-equity][dataset] DISCUSS -- target: Section 5 (Equity Agent) + Limitations
+% FAIR-Earth explicitly audits implicit neural representations of Earth data
+% for fairness stratified by landmass size and population density. Our Sentinel-2
+% VLA is a related implicit Earth representation, so this is a natural comparator
+% for a "did we audit the representation layer too?" defense.
+@misc{cai2025fairearth,
+  author        = {Cai, Daniel and Balestriero, Randall},
+  title         = {No Location Left Behind: Measuring and Improving the Fairness of Implicit Representations for {Earth} Data},
+  year          = {2025},
+  eprint        = {2502.06831},
   archivePrefix = {arXiv},
   primaryClass  = {cs.LG},
-  note   = {% TODO: verify author list}
+  note          = {Submitted 2025-02-05. FAIR-Earth dataset + spherical wavelet encoding; high-frequency subgroups (islands, coastlines) under-modeled.}
 }
 
-@article{fleishman2024vulnerability,
-  author  = {Fleishman, Erica and Pourmohamad, Yavar and others},
-  title   = {Spatial and Temporal Analysis of Vulnerability Disparity of Minorities to Wildfires in {California}},
-  journal = {International Journal of Disaster Risk Reduction},
-  year    = {2024},
-  doi     = {10.1016/j.ijdrr.2024.104918},
-  note    = {% TODO: verify authors, volume, pages}
+% [C-equity] DISCUSS -- target: Section 2 Line C (responsible-AI framing)
+% Broad responsible-AI-for-EO survey; cites fairness / bias / privacy
+% explicitly in EO. Cite if we need one-sentence general coverage of the EO-
+% fairness field.
+@article{ghamisi2024responsibleai,
+  author  = {Ghamisi, Pedram and Yu, Weikang and Marinoni, Andrea and Gevaert, Caroline M. and Persello, Claudio and Selvakumaran, Sivasakthy and Girotto, Manuela and Horton, Benjamin P. and Rufin, Philippe and Hostert, Patrick and Pacifici, Fabio and Atkinson, Peter M.},
+  title   = {Responsible {AI} for {Earth} Observation},
+  journal = {IEEE Geoscience and Remote Sensing Magazine},
+  year    = {2025},
+  note    = {Companion arXiv:2405.20868 (2024-05-31). Accepted to IEEE GRSM 2025. TODO: verify volume/pages upon publication.}
 }
 
-@article{chen2023geography,
-  author  = {Chen, Bin and others},
+% [C-equity] POST-SUBMIT -- SVI + wildfire occurrence descriptive statistics
+% Updated author list after verification (Schumann et al., not Chen).
+@article{schumann2024svi,
+  author  = {Schumann, R. L. and Emrich, C. T. and Butsic, V. and Mockrin, M. H. and Zhou, Y. and Johnson Gaither, C. and Price, O. and Syphard, A. D. and Whittaker, J. and Aksha, S. K.},
   title   = {The Geography of Social Vulnerability and Wildfire Occurrence (1984--2018) in the Conterminous {USA}},
   journal = {Natural Hazards},
-  year    = {2023},
-  doi     = {10.1007/s11069-023-06367-2},
-  note    = {% TODO: verify authors, volume, pages}
+  volume  = {120},
+  pages   = {4297--4327},
+  year    = {2024},
+  doi     = {10.1007/s11069-023-06367-2}
+}
+
+% [C-equity] POST-SUBMIT -- CA-specific minority wildfire vulnerability (different paper from Fleishman)
+@article{xie2024minorities,
+  author  = {Xie, Weiwei and Meng, Qingmin},
+  title   = {Spatial and temporal analysis of vulnerability disparity of minorities to wildfires in {California}},
+  journal = {International Journal of Disaster Risk Reduction},
+  volume  = {114},
+  pages   = {104949},
+  year    = {2024},
+  doi     = {10.1016/j.ijdrr.2024.104949},
+  note    = {Getis-Ord Gi* + Location Amplitude Index across CA minority subgroups.}
+}
+
+% [C-equity] POST-SUBMIT -- PNAS 2025 epidemiology on subpopulation heterogeneity
+@article{schwarz2025mortality,
+  author  = {Schwarz, Lara and Frankland, Timothy B. and Tartof, Sara Y. and Lee, Gina S. and Gu, Yuqian M. and Mayeda, Elizabeth Rose and {Gonz{\'a}lez}, David J. X. and Benmarhnia, Tarik and Casey, Joan A. and Chen, Chen},
+  title   = {Long-term exposure to wildfire smoke and mortality: Heterogeneous effects by exposure metric and across subpopulations},
+  journal = {Proceedings of the National Academy of Sciences ({PNAS})},
+  year    = {2025},
+  doi     = {10.1073/pnas.2509173122},
+  note    = {Kaiser Permanente SoCal cohort 2009-2019; under-75 and Black/Other race-ethnicity highest mortality risk.}
+}
+
+% [C-equity] POST-SUBMIT -- PM2.5 disparity contribution from wildland fire
+@article{nguyen2025pm25disparity,
+  author  = {Anonymous},
+  title   = {Wildland Fire Smoke Adds to Disproportionate {PM2.5} Exposure in the {United States}},
+  journal = {ACS ES\&T Air},
+  year    = {2025},
+  doi     = {10.1021/acsestair.4c00173},
+  note    = {TODO: verify author list. Wildland fires contribute further disproportionate PM2.5 for Black / AI/AN / non-urban populations on top of baseline non-fire disparities.}
+}
+
+% [C-equity] POST-SUBMIT -- CHVI for wildland fire smoke (STOTEN 2024)
+@article{jung2024chvi,
+  author  = {Jung, Jihoon and Wilkins, Joseph L. and Schollaert, Claire L. and Masuda, Yuta J. and Flunker, John C. and Connolly, Rachel E. and D'Evelyn, Savannah M. and Bonilla, Eimy and Rappold, Ana G. and Haugo, Ryan D. and Marlier, Miriam E. and Spector, June T.},
+  title   = {Advancing the community health vulnerability index for wildland fire smoke exposure},
+  journal = {Science of the Total Environment},
+  volume  = {906},
+  pages   = {167834},
+  year    = {2024},
+  doi     = {10.1016/j.scitotenv.2023.167834},
+  note    = {CONUS county CHVI: adaptive capacity, sensitivity, exposure.}
+}
+
+% [C-equity][dataset] POST-SUBMIT -- FPA FOD Attributes dataset (Fleishman / Pourmohamad group)
+@article{pourmohamad2024essd,
+  author  = {Pourmohamad, Yavar and Abatzoglou, John T. and Belval, Erin J. and Fleishman, Erica and Short, Karen C. and Reeves, Matt C. and others},
+  title   = {Physical, social, and biological attributes for improved understanding and prediction of wildfires: {FPA FOD-Attributes} dataset},
+  journal = {Earth System Science Data},
+  volume  = {16},
+  number  = {6},
+  pages   = {3045--3060},
+  year    = {2024},
+  doi     = {10.5194/essd-16-3045-2024},
+  note    = {Adds ~270 attributes including SVI / EJ metrics to USFS FPA FOD fire database. Potential covariate source for FireFair.}
+}
+
+% [C-equity][method] POST-SUBMIT -- spatial-fairness mechanism (not hazard-specific)
+@misc{shaham2023fairspatial,
+  author        = {Shaham, Sina and Ghinita, Gabriel and Shahabi, Cyrus},
+  title         = {Fair Spatial Indexing: A Paradigm for Group Spatial Fairness},
+  year          = {2023},
+  eprint        = {2302.02306},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.DB}
+}
+
+% [C-equity] POST-SUBMIT -- Comms Earth & Environment 2025 CA compound heat + smoke
+@article{jonesngo2025compound,
+  author  = {Jones-Ngo, Caitlin G. and others},
+  title   = {Increasing Exposures to Compound Wildfire Smoke and Extreme Heat Hazards in {California}, 2011--2020},
+  journal = {Earth's Future},
+  year    = {2025},
+  doi     = {10.1029/2024EF005189},
+  note    = {TODO: verify full author list, volume, pages from Zotero.}
+}
+
+% [C-equity] WATCH -- FAccT 2023 EJ-lens audit framework (older but foundational for AIES/FAccT reviewers)
+@inproceedings{franchi2023algorithms,
+  author    = {Franchi, Matt and Zamfirescu-Pereira, J. D. and Ju, Wendy and Pierson, Emma},
+  title     = {Algorithms as Social-Ecological-Technological Systems: An Environmental Justice Lens on Algorithmic Audits},
+  booktitle = {Proceedings of the 2023 {ACM} Conference on Fairness, Accountability, and Transparency ({FAccT})},
+  pages     = {805--819},
+  year      = {2023},
+  doi       = {10.1145/3593013.3594014}
 }
